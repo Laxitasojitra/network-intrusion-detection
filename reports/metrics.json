@@ -1,0 +1,98 @@
+{
+  "train_rows": 125973,
+  "test_rows": 22544,
+  "unseen_attack_types": [
+    "apache2",
+    "httptunnel",
+    "mailbomb",
+    "mscan",
+    "named",
+    "processtable",
+    "ps",
+    "saint",
+    "sendmail",
+    "snmpgetattack",
+    "snmpguess",
+    "sqlattack",
+    "udpstorm",
+    "worm",
+    "xlock",
+    "xsnoop",
+    "xterm"
+  ],
+  "unseen_attack_rows": 3750,
+  "cv_macro_f1": {
+    "Logistic Regression": 0.719,
+    "Random Forest": 0.9038,
+    "Gradient Boosting": 0.9199
+  },
+  "selected_classifier": "Gradient Boosting",
+  "test_results": {
+    "Logistic Regression": {
+      "accuracy": 0.7815,
+      "macro_f1": 0.5977,
+      "recall_per_class": {
+        "Normal": 0.9109,
+        "DoS": 0.7958,
+        "Probe": 0.8067,
+        "R2L": 0.3094,
+        "U2R": 0.16
+      },
+      "detection_rate": 0.7728,
+      "false_alarm_rate": 0.0891,
+      "unseen_attack_detection": 0.4797,
+      "known_attack_detection": 0.8938
+    },
+    "Random Forest": {
+      "accuracy": 0.7387,
+      "macro_f1": 0.4731,
+      "recall_per_class": {
+        "Normal": 0.9737,
+        "DoS": 0.7706,
+        "Probe": 0.5919,
+        "R2L": 0.0051,
+        "U2R": 0.015
+      },
+      "detection_rate": 0.5772,
+      "false_alarm_rate": 0.0263,
+      "unseen_attack_detection": 0.1491,
+      "known_attack_detection": 0.7539
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.7973,
+      "macro_f1": 0.6142,
+      "recall_per_class": {
+        "Normal": 0.9703,
+        "DoS": 0.7865,
+        "Probe": 0.7931,
+        "R2L": 0.2716,
+        "U2R": 0.09
+      },
+      "detection_rate": 0.697,
+      "false_alarm_rate": 0.0297,
+      "unseen_attack_detection": 0.3579,
+      "known_attack_detection": 0.8371
+    }
+  },
+  "anomaly_quantile": 0.98,
+  "detection_comparison": {
+    "Supervised only": {
+      "detection_rate": 0.697,
+      "false_alarm_rate": 0.0297,
+      "unseen_attack_detection": 0.3579,
+      "known_attack_detection": 0.8371
+    },
+    "Anomaly only": {
+      "detection_rate": 0.6218,
+      "false_alarm_rate": 0.0193,
+      "unseen_attack_detection": 0.5925,
+      "known_attack_detection": 0.6338
+    },
+    "Hybrid": {
+      "detection_rate": 0.7824,
+      "false_alarm_rate": 0.0323,
+      "unseen_attack_detection": 0.6427,
+      "known_attack_detection": 0.84
+    }
+  }
+}
